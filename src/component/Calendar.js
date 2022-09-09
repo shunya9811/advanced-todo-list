@@ -63,7 +63,7 @@ function Calendar(props){
                         id={startDate.format('YYYYMMDD')}
                     >
                         {startDate.format('D')}
-                        {/*<div className='circle'></div>*/}
+                        <p style={{fontSize: "10px"}}>{japanHoilday2022[startDate.format('YYYY-MM-DD')]}</p>
                     </Box>
                 </NavLink>
             )
@@ -104,14 +104,14 @@ function Calendar(props){
     return (
         <>
             <Box sx={{
-                width: '80%',
+                width: '100%',
                 textAlign: 'center',
                 fontSize: '50px',
                 fontWeight: '500',
                 margin: 'auto',
             }}>{endDate.format('YYYY年 MM月 ')}{endDate.format('MMMM').slice(0,3)}</Box>
             <Box sx={{
-                width: '50%',
+                width: '60%',
                 display: 'grid',
                 gridAutoFlow: 'row',
                 gridTemplateColumns: 'repeat(7, 1fr)',

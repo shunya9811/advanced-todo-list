@@ -43,20 +43,7 @@ function TopPage(){
 
     return (
         <div className='page'>
-            <div className='header'>
-                <h2>Calendar</h2>
-                <div className='selectBar'>
-                    <h2>category</h2>
-                    <select>
-                        <option value="all">All</option>
-                        <option value="school">school</option>
-                        <option value="work">work</option>
-                    </select>
-                </div>
-            </div>
-            <div className='calendar'>
-                <ShowCalendar/>
-            </div>
+            <ShowCalendar/>
             <div className='header'>
                 <h2>Today's todo</h2>
                 <div className='selectBar'>

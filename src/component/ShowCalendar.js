@@ -22,15 +22,20 @@ function ShowCalendar(){
 
     return (
         <>
-            <Calendar
-                year = {year}
-                month = {month}
-                key = {year+month}
-            />
-            
-            <button className='btn' value='prev' onClick={moveCalendar}>前の月</button>
-            <button className='btn' value='next' onClick={moveCalendar}>次の月</button>
-            
+            <div className='header'>
+                <h2>Calendar</h2>
+                <div className='selectBar'>
+                    <button className='btn' value='prev' onClick={moveCalendar}>前の月</button>
+                    <button className='btn' value='next' onClick={moveCalendar}>次の月</button>
+                </div>
+            </div>
+            <div className='calendar'>
+                <Calendar
+                    year = {year}
+                    month = {month}
+                    key = {year+month}
+                />
+            </div>
         </>
     )
 }
