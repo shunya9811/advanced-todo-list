@@ -26,14 +26,12 @@ const japanHoilday2022 = {
 
 
 
-function Calendar(){
-    const year = moment().year()
-    const month = moment().month()
-    const startDate = moment().startOf('month') //月の最初の日付を取得
-    //const startDate2 = moment([year, month, 1])
-    const endDate = moment(startDate).endOf("month") //月の最後の日付を取得
-    const lastMonthEndDate = moment().startOf('month').subtract(1, 'days') //前の月の最後の日付を取得
-    const nextMonthStartDate = moment(startDate).endOf("month").add(1, 'days')
+function Calendar(props){
+    
+    const startDate = moment([props.year, props.month, 1]) //月の最初の日付を取得
+    const endDate = Number(props.month) === 11 ? moment([props.year, 11, 31]) : moment([props.year, props.month+1, 1]).subtract(1, 'days') //月の最後の日付を取得
+    const lastMonthEndDate = startDate.clone().subtract(1, 'days') //前の月の最後の日付を取得
+    const nextMonthStartDate = endDate.clone().add(1, 'days')
     const calendar = [];
     
     
@@ -106,13 +104,14 @@ function Calendar(){
     return (
         <>
             <Box sx={{
-                width: '100%',
+                width: '80%',
                 textAlign: 'center',
                 fontSize: '50px',
                 fontWeight: '500',
-            }}>{endDate.format('YYYY年 M月 ')}{endDate.format('MMMM').slice(0,3)}</Box>
+                margin: 'auto',
+            }}>{endDate.format('YYYY年 MM月 ')}{endDate.format('MMMM').slice(0,3)}</Box>
             <Box sx={{
-                width: '70%',
+                width: '50%',
                 display: 'grid',
                 gridAutoFlow: 'row',
                 gridTemplateColumns: 'repeat(7, 1fr)',

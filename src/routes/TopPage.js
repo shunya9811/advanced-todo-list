@@ -1,4 +1,4 @@
-import Calendar from '../component/Calendar'
+import ShowCalendar from '../component/ShowCalendar'
 import Todo from '../component/Todo'
 
 import { useTodoContext } from '../store/index';
@@ -55,7 +55,7 @@ function TopPage(){
                 </div>
             </div>
             <div className='calendar'>
-                <Calendar />
+                <ShowCalendar/>
             </div>
             <div className='header'>
                 <h2>Today's todo</h2>

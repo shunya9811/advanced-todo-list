@@ -1,20 +1,38 @@
 import moment from 'moment'
+import { useState } from 'react'
+import Calendar from './Calendar'
 
-const config = {
-    show: 3,
+function ShowCalendar(){
+    let year = moment().year()
+    //let month = moment().month()
+
+    const [month, setMonth] = useState(moment().month())
+
+    const moveCalendar = (event) => {
+        if (event.target.value === "prev"){
+            if (month >= 1){
+                setMonth(month-1)
+            }
+        } else {
+            if (month <= 10){
+                setMonth(month+1)    
+            }
+        }
+    }
+
+    return (
+        <>
+            <Calendar
+                year = {year}
+                month = {month}
+                key = {year+month}
+            />
+            
+            <button className='btn' value='prev' onClick={moveCalendar}>前の月</button>
+            <button className='btn' value='next' onClick={moveCalendar}>次の月</button>
+            
+        </>
+    )
 }
 
-function showCalendar(){
-    const year = moment().year()
-    const month = moment().month()+1
-
-
-    console.log(endDate)
-    const endDate2 = month === 12 ? moment([year+1, 1, 1]).subtract(1, 'days') : moment([year, month+1, 1]).subtract(1, 'days')
-    console.log(endDate2) 
-
-    console.log(startDate2.format('MD'))
-    console.log(startDate2.format('YYYYMMDD'))
-    console.log(startDate2.format('D'))
-
-}
+export default ShowCalendar;
