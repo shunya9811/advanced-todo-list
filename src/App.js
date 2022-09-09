@@ -17,9 +17,7 @@ function App() {
       <main>
         <Routes>
           <Route path='/advanced-todo-list/' element={<TopPage/>}></Route>
-          {/*日付で動的に*/}
           <Route path='/advanced-todo-list/:date' element={<TodoList/>}></Route>
-          {/*Todoのidで動的に*/}
           <Route path='/advanced-todo-list/todoList/:todoId' element={<Detail/>}></Route>
         </Routes>
       </main>
