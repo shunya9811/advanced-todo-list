@@ -1,6 +1,6 @@
 import './App.css';
 
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route, NavLink, Outlet } from 'react-router-dom';
 
 import TopPage from './routes/TopPage'
 import TodoList from './routes/TodoList'
@@ -20,6 +20,7 @@ function App() {
           <Route path='/advanced-todo-list/:date' element={<TodoList/>}></Route>
           <Route path='/advanced-todo-list/todoList/:todoId' element={<Detail/>}></Route>
         </Routes>
+        <Outlet></Outlet>
       </main>
     </div>
   );
