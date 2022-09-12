@@ -10,15 +10,15 @@ function App() {
   return (
     <div className="App">
       <header>
-        <NavLink to='/advanced-todo-list/' style={{ color: "white"}}>
+        <NavLink to='/' style={{ color: "white"}}>
           <h1 className='title'>Advanced Todo List</h1>
         </NavLink>
       </header>
       <main>
         <Routes>
-          <Route path='/advanced-todo-list/' element={<TopPage/>}></Route>
-          <Route path='/advanced-todo-list/:date' element={<TodoList/>}></Route>
-          <Route path='/advanced-todo-list/todoList/:todoId' element={<Detail/>}></Route>
+          <Route path='/' element={<TopPage/>}></Route>
+          <Route path='/:date' element={<TodoList/>}></Route>
+          <Route path='/todoList/:todoId' element={<Detail/>}></Route>
         </Routes>
         <Outlet></Outlet>
       </main>

@@ -54,7 +54,7 @@ function Calendar(props){
         if (startDate.format('YYYY-MM-DD') in japanHoilday2022){
             calendar.push(
                 <NavLink 
-                    to={`/advanced-todo-list/${startDate.format('YYYYMMDD')}`}
+                    to={`/${startDate.format('YYYYMMDD')}`}
                     style={{ textDecoration: 'none'}}
                     key={startDate.format('MD')}
                 >
@@ -70,7 +70,7 @@ function Calendar(props){
         } else {
             calendar.push(
                 <NavLink 
-                    to={`/advanced-todo-list/${startDate.format('YYYYMMDD')}`}
+                    to={`/${startDate.format('YYYYMMDD')}`}
                     style={{ textDecoration: 'none', color: '#000'}}
                     key={startDate.format('MD')}
                 >
