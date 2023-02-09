@@ -50,9 +50,9 @@ function TopPage(){
                     <h2>priority</h2>
                     <select onChange={handleChange}>
                         <option value="all">All</option>
-                        <option value="3">Top priority 3</option>
-                        <option value="2">High priority 2</option>
-                        <option value="1">Low priority 1</option>
+                        <option value="3">Top priority</option>
+                        <option value="2">High priority</option>
+                        <option value="1">Low priority</option>
                     </select>
                 </div>
             </div>
